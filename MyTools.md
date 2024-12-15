@@ -1,6 +1,6 @@
-### Awesome list by Nathan Martel !
+# Awesome list by Nathan Martel !
 
-**Analyse de fichiers**
+## **Analyse de fichiers**
 
 Binwalk : Extraction de firmware
 
@@ -62,7 +62,7 @@ pyew : Analyse fichiers exécutables
 
 hashdeep : Audit intégrité fichiers
 
-**Réseaux et scans**
+## **Réseaux et scans**
 
 nmap : Scan réseau
 
@@ -124,7 +124,7 @@ paros : Proxy web
 
 netsed : Modification paquets réseau
 
-**Exploit et pentest**
+## **Exploit et pentest**
 
 msfconsole : Exploits multiples
 
@@ -196,7 +196,7 @@ mscache2john : Conversion hash MS Cache
 
 impackets-smbserver : Serveur SMB Python
 
-**Reverse Engineering**
+## **Reverse Engineering**
 
 Ghidra : Désassemblage
 
@@ -256,7 +256,7 @@ unshield : Extraction archives InstallShield
 
 lldb : Débogage macOS/Linux
 
-**Web**
+## **Web**
 
 Burp Suite : Pentest web
 
@@ -312,7 +312,7 @@ metasploit wmap : Scanning web
 
 webscarab : Analyse requêtes HTTP
 
-**OSINT**
+## **OSINT**
 
 theHarvester : Récupération informations
 
@@ -360,7 +360,7 @@ datasploit : Framework OSINT intégré
 
 weggli : Recherche vulnérabilités code
 
-**Crypto et stéganographie**
+## **Crypto et stéganographie**
 
 steghide : Extraction stéganographie
 
@@ -402,7 +402,7 @@ hideandseek : Recherche données stéganographiques
 
 aescrypt : Cryptage AES
 
-**CMS Tools**
+## **CMS Tools**
 
 wpscan : Scan vulnérabilités WordPress
 
@@ -504,7 +504,7 @@ droopescan : Scan vulnérabilités Drupal
 
 wpscan-cli : Outil CLI WP
 
-**Divers**
+## **Divers**
 
 proxychains : Proxy et anonymat
 
